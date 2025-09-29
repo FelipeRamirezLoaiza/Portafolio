@@ -1,0 +1,297 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f172a;
+  color: #e2e8f0;
+  line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: #1f2937;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* centramos todo el contenido */
+  position: relative;        /* para ubicar el logo fijo a la izquierda */
+}
+
+/* MENÚ HORIZONTAL */
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav a {
+  position: relative;
+  text-decoration: none;
+  color: #e2e8f0;
+  font-size: 1rem;
+  padding-bottom: 0.3rem; /* espacio para la línea */
+  transition: color 0.3s;
+}
+
+/* SUBRAYADO EFECTO IZQ → DER */
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background: #38bdf8;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.nav a:hover {
+  color: #38bdf8;
+}
+
+/* ===== HAMBURGUESA ===== */
+/* Hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ===== SECCIONES ===== */
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.presentation h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.presentation p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: #94a3b8;
+}
+
+/* ===== HABILIDADES ===== */
+.skills-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  color: #38bdf8;
+}
+
+.skills-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.group-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #38bdf8;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.skill-card {
+  background: #1e1e1e;
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 220px;
+  text-align: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+}
+
+.skill-card h4 {
+  margin-bottom: 1rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  z-index: 2;
+  position: relative;
+}
+
+.skill-preview {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: top 0.4s ease;
+}
+
+.skill-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.skill-card:hover .skill-preview {
+  top: 0;
+}
+
+/* ===== PROYECTOS ===== */
+.projects h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #38bdf8;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: contain;
+  margin-bottom: 1rem;
+
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+  color: #38bdf8;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.5rem 1rem;
+  background: #2563eb;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.project-card a:hover {
+  background: #1d4ed8;
+}
+
+.github-icon {
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
+/* ===== CONTACTO ===== */
+.section-contact {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-contact h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #38bdf8;
+}
+
+.section-contact p {
+  font-size: 1.2rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
+}
+
+.section-contact .img1 {
+  max-width: 20px;
+  margin-right: 10px;
+}
+
+.section-contact .img2 {
+  max-width: 18px;
+  margin-right: 10px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1e293b;
+  text-align: center;
+  padding: 1rem;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* mostrar hamburguesa */
+  }
+
+  .nav {
+    display: none; /* ocultar menú en móvil */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    background: #1f2937;
+    padding: 1rem 0;
+    text-align: center;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .nav.active {
+    display: block; /* mostrar menú al hacer click */
+  }
+}
